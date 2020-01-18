@@ -1,0 +1,30 @@
+<p>slab-list works!</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th>SlabId</th>
+            <th>Designation</th>
+            <th>TravelByAir</th>
+            <th>MaxNoDays</th>
+            <th>EligibleForExchange</th>
+            <th>Domestic/International</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let slab of slabs | async">
+            <td>{{slab.slabId}}</td>
+            <td>{{slab.designation}}</td>
+            <td>{{slab.travelByAir}}</td>
+            <td>{{slab.maxNoDays}}</td>
+            <td>{{slab.eligibleForExchange}}</td>
+            <td>{{slab.domesticInternational}}</td>
+            <td>&nbsp;&nbsp;&nbsp; <button (click)="deleteSlab(slab.slabId)">Delete</button> &nbsp;&nbsp;&nbsp;
+                <button (click)="updateAddress(slab.slabId)">Update</button> &nbsp;&nbsp;&nbsp;
+                <button (click)="addressDetails(slab.slabId)">Details</button> &nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+    </tbody>
+    <br>
+    <button (click)="addNewAddress()">Add New Address</button>
+    <br>
+</table>
